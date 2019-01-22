@@ -1,4 +1,5 @@
 import os
+import sys
 import shutil
 from glob import glob
 from datetime import date
@@ -6,7 +7,9 @@ import time
 
 
 if __name__ == '__main__':
-    with open('paths.txt', 'r') as paths:
+    text_file_path = sys.argv[1]
+    print(text_file_path)
+    with open(text_file_path, 'r') as paths:
         for path in paths:
             files_discovered = False
             all_files = []
